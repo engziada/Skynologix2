@@ -1,41 +1,57 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import WhatsAppButton from "@/components/ui/WhatsAppButton";
-import { ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, ArrowRight } from "lucide-react";
 
 export default function FinalCTASection() {
   const t = useTranslations("cta");
 
   return (
-    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      {/* Decorative dots */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="dots-grid w-full h-full" />
-      </div>
+    <section className="py-24 relative overflow-hidden bg-primary">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div
+          className="relative glass-card rounded-[2.5rem] p-8 sm:p-16 overflow-hidden shadow-2xl"
+        >
+          {/* Subtle background elements */}
+          <div className="absolute inset-0 z-0 mesh-pattern opacity-10" />
+          <div className="absolute -top-24 -right-24 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
 
-      {/* Glow accents */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-start">
+            {/* Title and Subtitle */}
+            <div className="max-w-xl">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight text-white">
+                {t("title")}
+              </h2>
+              <p className="text-silver-dark text-lg leading-relaxed">
+                {t("subtitle") || "Join our community and stay updated with the latest in digital innovation."}
+              </p>
+            </div>
 
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
-          {t("title")}
-        </h2>
-        <p className="text-lg mb-10" style={{ color: "var(--text-secondary)" }}>
-          {t("subtitle")}
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent-light transition-all duration-200 shadow-lg shadow-accent/20"
-          >
-            {t("contactBtn")}
-            <ArrowRight size={18} />
-          </Link>
-          <WhatsAppButton
-            text={t("whatsappBtn")}
-            message="مرحبًا، أرغب في بدء مشروع جديد"
-          />
+            {/* Actions */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
+              {/* WhatsApp Button */}
+              <a
+                href="https://wa.me/+966XXXXXXXX?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-white bg-green-500 rounded-xl hover:bg-green-600 transition-all shadow-lg hover:scale-[1.02]"
+              >
+                <MessageCircle size={22} />
+                {t("whatsappBtn")}
+              </a>
+
+              {/* Contact Button */}
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 text-lg font-bold text-white bg-accent rounded-xl hover:bg-accent-light transition-all shadow-lg glow-effect hover:scale-[1.02]"
+              >
+                {t("contactBtn")}
+                <ArrowRight size={22} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

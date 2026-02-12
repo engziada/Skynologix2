@@ -5,19 +5,26 @@
   },
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "Vision",
     "services": "Services",
-    "howItWorks": "How It Works",
-    "contact": "Contact",
+    "howItWorks": "Process",
+    "contact": "Expertise",
     "portfolio": "Portfolio",
-    "startProject": "Start Your Project",
-    "switchLang": "AR"
+    "startProject": "Talk to Us",
+    "switchLang": "AR",
+    "riyadh": "RIYADH"
   },
   "hero": {
-    "title": "Build Your Professional Digital Presence",
-    "subtitle": "Combining smart design, fast performance, and seamless user experience",
-    "cta": "Start Your Project",
-    "whatsapp": "Chat on WhatsApp"
+    "title": "Outstanding Web Solutions for Saudi SMEs",
+    "subtitle": "Building international digital standards with local expertise for growth in the Kingdom.",
+    "cta": "Start Now",
+    "whatsapp": "WhatsApp",
+    "badge1Title": "Solutions",
+    "badge1Desc": "Network logistics, content management, and development for Saudi companies across the Kingdom",
+    "badge2Title": "Expertise",
+    "badge2Desc": "Diverse Saudi and international experience managing your digital gateway",
+    "badge3Title": "Vision",
+    "badge3Desc": "To become the first partner in transforming ideas into an effective digital presence in the Kingdom"
   },
   "why": {
     "sectionTitle": "Why Skynologix?",
@@ -65,8 +72,16 @@
     }
   },
   "process": {
-    "sectionTitle": "How We Work",
+    "sectionTitle": "Our Methodology",
     "sectionSubtitle": "Clear steps from idea to launch",
+    "labels": {
+      "discovery": "Discovery",
+      "expertise": "Expertise",
+      "process": "Process",
+      "flexibility": "Flexibility",
+      "techIntegration": "Integration",
+      "support": "Support"
+    },
     "steps": {
       "step1": {
         "title": "Understanding the Project & Goals",
@@ -108,10 +123,12 @@
     }
   },
   "cta": {
-    "title": "Ready to launch a professional website that serves your business growth?",
+    "title": "Ready to Start Your Digital Journey?",
     "subtitle": "Contact us today and start your digital journey",
     "contactBtn": "Contact Us",
-    "whatsappBtn": "WhatsApp"
+    "whatsappBtn": "WhatsApp",
+    "emailPlaceholder": "Email",
+    "sendEmail": "Send Email"
   },
   "contact": {
     "pageTitle": "Contact Us",
@@ -121,9 +138,15 @@
     "email": "Email",
     "phone": "Phone",
     "message": "Message",
+    "namePlaceholder": "Enter your name",
+    "companyPlaceholder": "Your company name",
+    "emailPlaceholder": "example@email.com",
+    "messagePlaceholder": "How can we help you?",
     "send": "Send",
     "sending": "Sending...",
     "success": "Your message has been sent successfully! We'll get back to you soon.",
+    "successTitle": "Message Sent!",
+    "sendAnother": "Send another message",
     "error": "An error occurred. Please try again.",
     "whatsappTitle": "Or contact us directly via WhatsApp",
     "whatsappBtn": "Start WhatsApp Chat",

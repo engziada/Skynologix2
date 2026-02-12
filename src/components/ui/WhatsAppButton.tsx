@@ -24,12 +24,12 @@ export default function WhatsAppButton({
   }`;
 
   const baseStyles =
-    "inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium text-sm transition-all duration-200";
+    "inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg hover:scale-[1.02] active:scale-[0.98]";
   const variants = {
     primary:
-      "bg-green-500 text-white hover:bg-green-600 shadow-lg shadow-green-500/20",
+      "bg-green-500 text-white hover:bg-green-600 shadow-green-500/20",
     outline:
-      "border-2 border-green-500 text-green-600 hover:bg-green-50",
+      "border-2 border-green-500/30 text-green-500 hover:bg-green-500/5 hover:border-green-500",
   };
 
   return (
@@ -39,7 +39,7 @@ export default function WhatsAppButton({
       rel="noopener noreferrer"
       className={`${baseStyles} ${variants[variant]} ${className}`}
     >
-      <MessageCircle size={18} />
+      <MessageCircle size={24} />
       {text}
     </a>
   );

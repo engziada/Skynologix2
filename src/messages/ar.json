@@ -5,19 +5,26 @@
   },
   "nav": {
     "home": "الرئيسية",
-    "about": "من نحن",
-    "services": "خدماتنا",
-    "howItWorks": "كيف نعمل",
-    "contact": "تواصل معنا",
+    "about": "الرؤية",
+    "services": "الخدمات",
+    "howItWorks": "العملية",
+    "contact": "الخبرة",
     "portfolio": "أعمالنا",
-    "startProject": "ابدأ مشروعك",
-    "switchLang": "EN"
+    "startProject": "تحدث معنا",
+    "switchLang": "EN",
+    "riyadh": "RIYADH"
   },
   "hero": {
-    "title": "بنِ حضورك الرقمي بموقع احترافي",
-    "subtitle": "يجمع بين ذكاء التصميم وسرعة الأداء وتجربة استخدام سلسة",
-    "cta": "ابدأ مشروعك",
-    "whatsapp": "تواصل عبر واتساب"
+    "title": "حلول ويب متميزة للشركات السعودية الصغيرة والمتوسطة",
+    "subtitle": "بناء معايير دولية رقمية بخبرة محلية لنمو في المملكة.",
+    "cta": "ابدأ الآن",
+    "whatsapp": "واتساب",
+    "badge1Title": "حلول",
+    "badge1Desc": "لوجستيات الشبكة، إدارة محتوى، تطوير الشركات السعودية لكل في المملكة",
+    "badge2Title": "الخبرة",
+    "badge2Desc": "أعمالنا السعودية والأمريكية متنوعة محلية تدير بوابتكم",
+    "badge3Title": "الرؤية",
+    "badge3Desc": "لتصبح الشريك الأول في تحويل أفكارها إلى حضور رقمي فعّال في المملكة"
   },
   "why": {
     "sectionTitle": "لماذا Skynologix؟",
@@ -65,8 +72,16 @@
     }
   },
   "process": {
-    "sectionTitle": "كيف نعمل",
+    "sectionTitle": "عمليتنا المنهجية",
     "sectionSubtitle": "خطوات واضحة من الفكرة إلى الإطلاق",
+    "labels": {
+      "discovery": "اكتشاف",
+      "expertise": "الخبرة",
+      "process": "العملية",
+      "flexibility": "المرونة",
+      "techIntegration": "فتح الأبواب",
+      "support": "دعم"
+    },
     "steps": {
       "step1": {
         "title": "فهم المشروع والأهداف",
@@ -108,10 +123,12 @@
     }
   },
   "cta": {
-    "title": "هل أنت مستعد لإطلاق موقع احترافي يخدم نمو أعمالك؟",
+    "title": "جاهز لبدء رحلتك الرقمية؟",
     "subtitle": "تواصل معنا اليوم وابدأ رحلتك الرقمية",
-    "contactBtn": "تواصل معنا",
-    "whatsappBtn": "واتساب"
+    "contactBtn": "اتصل بنا",
+    "whatsappBtn": "واتساب",
+    "emailPlaceholder": "البريد",
+    "sendEmail": "أرسل البريد الإلكتروني"
   },
   "contact": {
     "pageTitle": "تواصل معنا",
@@ -121,9 +138,15 @@
     "email": "البريد الإلكتروني",
     "phone": "رقم الهاتف",
     "message": "الرسالة",
+    "namePlaceholder": "أدخل اسمك",
+    "companyPlaceholder": "اسم شركتك",
+    "emailPlaceholder": "example@email.com",
+    "messagePlaceholder": "كيف يمكننا مساعدتك؟",
     "send": "إرسال",
     "sending": "جاري الإرسال...",
     "success": "تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.",
+    "successTitle": "تم الإرسال بنجاح!",
+    "sendAnother": "إرسال رسالة أخرى",
     "error": "حدث خطأ. يرجى المحاولة مرة أخرى.",
     "whatsappTitle": "أو تواصل مباشرة عبر واتساب",
     "whatsappBtn": "ابدأ محادثة واتساب",

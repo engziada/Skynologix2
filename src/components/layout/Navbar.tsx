@@ -12,10 +12,9 @@ type NavbarProps = {
 };
 
 const navLinks = [
-  { href: "/", key: "home" },
-  { href: "/about", key: "about" },
   { href: "/services", key: "services" },
   { href: "/how-it-works", key: "howItWorks" },
+  { href: "/about", key: "about" },
   { href: "/contact", key: "contact" },
 ] as const;
 
@@ -23,72 +22,80 @@ export default function Navbar({ locale }: NavbarProps) {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const otherLocale = locale === "ar" ? "en" : "ar";
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b" style={{ backgroundColor: "var(--bg-navbar)", borderColor: "var(--border-color)" }}>
+    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-white/5 transition-all duration-300" style={{ backgroundColor: "rgba(6, 15, 29, 0.7)" }}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex h-[85px] items-center justify-between">
+          {/* Logo + RIYADH */}
+          <Link href="/" className="flex items-center gap-3 group transition-transform hover:scale-[1.02] active:scale-[0.98]">
             <Image
-              src="/logo.svg"
+              src={theme === "dark" ? "/logo-white.svg" : "/logo-dark.svg"}
               alt="Skynologix"
-              width={32}
-              height={32}
-              className="h-8 w-auto"
-              style={{ color: "var(--text-primary)" }}
+              width={45}
+              height={45}
+              className="h-11 w-auto"
             />
-            <span className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>
-              SKYNO<span className="text-accent">LOGIX</span>
-            </span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-bold tracking-wide text-white group-hover:text-accent transition-colors">
+                SKYNO<span className="text-accent group-hover:text-white transition-colors">LOGIX</span>
+              </span>
+              <span className="text-[11px] font-medium tracking-[0.4em] text-end text-silver-dark group-hover:text-silver-light transition-colors">
+                {t("riyadh")}
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Nav - Center */}
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
-                  pathname === link.href
-                    ? "text-accent"
-                    : ""
+                className={`text-sm font-bold uppercase tracking-widest transition-all hover:text-accent relative group ${
+                  pathname === link.href ? "text-accent" : "text-silver-dark"
                 }`}
-                style={pathname !== link.href ? { color: "var(--text-secondary)" } : undefined}
               >
                 {t(link.key)}
+                <span className={`absolute -bottom-1 left-0 h-[2px] bg-accent transition-all duration-300 ${pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`} />
               </Link>
             ))}
           </div>
 
-          {/* Actions */}
-          <div className="flex items-center gap-2">
+          {/* Actions - Right */}
+          <div className="flex items-center gap-5">
             {/* Language Toggle */}
-            <Link
-              href={pathname}
-              locale={otherLocale}
-              className="text-sm font-semibold px-3 py-1.5 rounded-md border hover:border-accent/30 hover:text-accent transition-colors"
-              style={{ borderColor: "var(--border-color)", color: "var(--text-secondary)" }}
-            >
-              {t("switchLang")}
-            </Link>
+            <div className="flex items-center gap-1 text-xs font-bold tracking-tighter" style={{ color: "var(--text-secondary)" }}>
+              <Link
+                href={pathname}
+                locale="en"
+                className={`px-2 py-1 rounded-md transition-all ${locale === "en" ? "bg-accent text-white shadow-lg" : "hover:text-accent hover:bg-accent/10"}`}
+              >
+                EN
+              </Link>
+              <Link
+                href={pathname}
+                locale="ar"
+                className={`px-2 py-1 rounded-md transition-all ${locale === "ar" ? "bg-accent text-white shadow-lg" : "hover:text-accent hover:bg-accent/10"}`}
+              >
+                AR
+              </Link>
+            </div>
 
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md border hover:border-accent/30 hover:text-accent transition-colors"
-              style={{ borderColor: "var(--border-color)", color: "var(--text-secondary)" }}
+              className="p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-accent/30 hover:text-accent transition-all text-silver-dark shadow-sm"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
             </button>
 
             {/* CTA Button - Desktop */}
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent-light transition-colors"
+              className="hidden lg:inline-flex items-center px-6 py-2.5 text-sm font-bold text-white bg-accent rounded-xl hover:bg-accent-light transition-all shadow-lg glow-effect hover:scale-[1.02] active:scale-[0.98]"
             >
               {t("startProject")}
             </Link>
@@ -96,29 +103,27 @@ export default function Navbar({ locale }: NavbarProps) {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2"
-              style={{ color: "var(--text-primary)" }}
+              className="lg:hidden p-2 text-white hover:text-accent transition-colors"
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden border-t py-4 space-y-2" style={{ borderColor: "var(--border-color)" }}>
+          <div className="lg:hidden border-t border-white/5 py-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-300">
             {navLinks.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className={`block px-4 py-2 text-sm font-medium rounded-md transition-colors ${
+                className={`block px-6 py-3.5 text-base font-bold uppercase tracking-widest rounded-xl transition-all ${
                   pathname === link.href
-                    ? "text-accent bg-accent/5"
-                    : "hover:text-accent hover:bg-accent/5"
+                    ? "text-accent bg-accent/10"
+                    : "text-silver-dark hover:text-accent hover:bg-accent/5"
                 }`}
-                style={pathname !== link.href ? { color: "var(--text-secondary)" } : undefined}
               >
                 {t(link.key)}
               </Link>
@@ -126,7 +131,7 @@ export default function Navbar({ locale }: NavbarProps) {
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="block mx-4 mt-2 text-center px-4 py-2 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent-light transition-colors"
+              className="block mx-6 mt-4 text-center px-6 py-4 text-base font-bold text-white bg-accent rounded-xl hover:bg-accent-light transition-all shadow-lg"
             >
               {t("startProject")}
             </Link>

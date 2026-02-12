@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import SectionHeading from "@/components/ui/SectionHeading";
+import PageHeader from "@/components/ui/PageHeader";
 import FinalCTASection from "@/components/sections/FinalCTASection";
 import { Globe, Code2, Rocket, Gauge } from "lucide-react";
+import Reveal from "@/components/ui/Reveal";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -29,36 +30,40 @@ export default function ServicesPage() {
 
   return (
     <>
-      <section className="pt-28 pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
+      <PageHeader title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
 
-          <div className="space-y-12 max-w-4xl mx-auto">
+      <section className="pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {keys.map((key, i) => {
               const Icon = icons[i];
               return (
-                <div
-                  key={key}
-                  className="glow-border rounded-xl p-8 flex flex-col md:flex-row gap-6 items-start"
-                >
-                  <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <Icon size={32} className="text-accent" />
+                <Reveal key={key} delay={i * 100}>
+                  <div
+                    className="glass-card glass-card-hover rounded-3xl p-10 flex flex-col gap-8 group h-full"
+                  >
+                    <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-all duration-500 group-hover:scale-110">
+                      <Icon size={32} className="text-accent" />
+                    </div>
+                    <div>
+                      <h2 className="text-2xl font-bold mb-5 text-white tracking-tight">
+                        {t(`items.${key}.title`)}
+                      </h2>
+                      <p className="leading-relaxed text-lg text-silver-dark font-medium">
+                        {t(`items.${key}.description`)}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="text-xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
-                      {t(`items.${key}.title`)}
-                    </h2>
-                    <p className="leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                      {t(`items.${key}.description`)}
-                    </p>
-                  </div>
-                </div>
+                </Reveal>
               );
             })}
           </div>
         </div>
       </section>
-      <FinalCTASection />
+      
+      <Reveal>
+        <FinalCTASection />
+      </Reveal>
     </>
   );
 }

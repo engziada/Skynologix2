@@ -9,27 +9,32 @@ export default function WhySection() {
   const t = useTranslations("why");
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative overflow-hidden bg-navy">
+      {/* Background decoration */}
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {keys.map((key, i) => {
             const Icon = icons[i];
             return (
               <div
                 key={key}
-                className="group glow-border rounded-xl p-6 transition-all duration-300 hover:-translate-y-1"
+                className="glass-card glass-card-hover rounded-3xl p-8 flex flex-col gap-6"
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <Icon size={24} className="text-accent" />
+                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-all duration-500 group-hover:scale-110">
+                  <Icon size={28} className="text-accent" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
-                  {t(`items.${key}.title`)}
-                </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                  {t(`items.${key}.description`)}
-                </p>
+                <div>
+                  <h3 className="text-xl font-bold mb-3 text-white tracking-tight">
+                    {t(`items.${key}.title`)}
+                  </h3>
+                  <p className="text-base leading-relaxed text-silver-dark font-medium">
+                    {t(`items.${key}.description`)}
+                  </p>
+                </div>
               </div>
             );
           })}

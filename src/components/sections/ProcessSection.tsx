@@ -1,37 +1,64 @@
 import { useTranslations } from "next-intl";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-const stepKeys = ["step1", "step2", "step3", "step4", "step5"] as const;
+const labelKeys = [
+  "discovery",
+  "expertise",
+  "process",
+  "flexibility",
+  "techIntegration",
+  "support",
+] as const;
 
-export default function ProcessSection() {
+interface ProcessSectionProps {
+  hideHeading?: boolean;
+}
+
+export default function ProcessSection({ hideHeading = false }: ProcessSectionProps) {
   const t = useTranslations("process");
 
   return (
-    <section className="py-20" style={{ backgroundColor: "var(--bg-secondary)" }}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
+    <section className="py-24 bg-navy relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+      
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {!hideHeading && (
+          <SectionHeading title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
+        )}
 
-        <div className="relative max-w-3xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute top-0 bottom-0 start-6 w-0.5 bg-accent/20" />
+        {/* Horizontal stepper */}
+        <div className="relative max-w-5xl mx-auto mt-20">
+          {/* Horizontal line */}
+          <div className="absolute top-[20px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent hidden md:block" />
 
-          <div className="space-y-8">
-            {stepKeys.map((key, i) => (
-              <div key={key} className="relative flex gap-6">
-                {/* Step number circle */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-accent/20">
-                  {i + 1}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-4">
+            {labelKeys.map((key, i) => (
+              <div key={key} className="relative flex flex-col items-center text-center group">
+                {/* Dot / Indicator */}
+                <div
+                  className={`relative z-10 w-12 h-12 rounded-[1rem] border flex items-center justify-center transition-all duration-500 shadow-xl ${
+                    i === 0
+                      ? "bg-accent border-accent/50 shadow-accent/40 scale-110"
+                      : "glass-card group-hover:border-accent/50 group-hover:scale-110"
+                  }`}
+                >
+                  <span className={`text-base font-black ${i === 0 ? "text-white" : "text-silver-dark group-hover:text-accent"}`}>
+                    {i + 1}
+                  </span>
                 </div>
-
-                {/* Content */}
-                <div className="glow-border rounded-xl p-5 flex-1">
-                  <h3 className="text-lg font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
-                    {t(`steps.${key}.title`)}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                    {t(`steps.${key}.description`)}
-                  </p>
-                </div>
+                
+                {/* Label */}
+                <h3
+                  className={`mt-8 text-sm font-bold uppercase tracking-widest transition-colors duration-300 ${
+                    i === 0 ? "text-accent" : "text-white group-hover:text-accent"
+                  }`}
+                >
+                  {t(`labels.${key}`)}
+                </h3>
+                
+                {/* Mobile line indicator */}
+                <div className={`mt-3 h-[2px] w-10 transition-all duration-500 md:hidden ${i === 0 ? "bg-accent" : "bg-white/10 group-hover:bg-accent/50"}`} />
               </div>
             ))}
           </div>

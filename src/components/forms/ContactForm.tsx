@@ -66,9 +66,22 @@ export default function ContactForm() {
 
   if (state === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-12 text-center">
-        <CheckCircle size={48} className="text-green-500 mb-4" />
-        <p className="text-lg font-medium" style={{ color: "var(--text-primary)" }}>{t("success")}</p>
+      <div className="flex flex-col items-center justify-center py-16 text-center space-y-6">
+        <div className="w-20 h-24 rounded-3xl bg-green-500/10 flex items-center justify-center mb-4">
+          <CheckCircle size={48} className="text-green-500" />
+        </div>
+        <div className="space-y-2">
+          <h3 className="text-2xl font-bold text-white tracking-tight">{t("successTitle") || "Message Sent!"}</h3>
+          <p className="text-lg text-silver-dark font-medium max-w-sm mx-auto">
+            {t("success")}
+          </p>
+        </div>
+        <button
+          onClick={() => setState("idle")}
+          className="mt-8 px-8 py-3 rounded-xl border border-white/10 text-white font-bold hover:bg-white/5 transition-all active:scale-[0.98]"
+        >
+          {t("sendAnother") || "Send another message"}
+        </button>
       </div>
     );
   }
@@ -85,8 +98,8 @@ export default function ContactForm() {
       />
 
       {/* Name */}
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-1" style={{ color: "var(--text-primary)" }}>
+      <div className="space-y-2">
+        <label htmlFor="name" className="block text-sm font-bold uppercase tracking-widest text-silver-dark ms-1">
           {t("name")} *
         </label>
         <input
@@ -94,31 +107,34 @@ export default function ContactForm() {
           id="name"
           name="name"
           required
-          className="w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-          style={{ backgroundColor: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text-primary)" }}
+          className="w-full px-5 py-4 rounded-xl glass-input text-white text-base focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-300 placeholder:text-silver-dark/30"
+          placeholder={t("namePlaceholder") || "Enter your name"}
         />
         {errors.name && (
-          <p className="mt-1 text-xs text-red-500">{errors.name}</p>
+          <p className="mt-1 text-xs text-red-400 font-medium flex items-center gap-1">
+            <AlertCircle size={12} />
+            {errors.name}
+          </p>
         )}
       </div>
 
       {/* Company */}
-      <div>
-        <label htmlFor="company" className="block text-sm font-medium mb-1" style={{ color: "var(--text-primary)" }}>
+      <div className="space-y-2">
+        <label htmlFor="company" className="block text-sm font-bold uppercase tracking-widest text-silver-dark ms-1">
           {t("company")}
         </label>
         <input
           type="text"
           id="company"
           name="company"
-          className="w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-          style={{ backgroundColor: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text-primary)" }}
+          className="w-full px-5 py-4 rounded-xl glass-input text-white text-base focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-300 placeholder:text-silver-dark/30"
+          placeholder={t("companyPlaceholder") || "Your company name"}
         />
       </div>
 
       {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1" style={{ color: "var(--text-primary)" }}>
+      <div className="space-y-2">
+        <label htmlFor="email" className="block text-sm font-bold uppercase tracking-widest text-silver-dark ms-1">
           {t("email")} *
         </label>
         <input
@@ -126,17 +142,20 @@ export default function ContactForm() {
           id="email"
           name="email"
           required
-          className="w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-          style={{ backgroundColor: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text-primary)" }}
+          className="w-full px-5 py-4 rounded-xl glass-input text-white text-base focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-300 placeholder:text-silver-dark/30"
+          placeholder={t("emailPlaceholder") || "example@email.com"}
         />
         {errors.email && (
-          <p className="mt-1 text-xs text-red-500">{errors.email}</p>
+          <p className="mt-1 text-xs text-red-400 font-medium flex items-center gap-1">
+            <AlertCircle size={12} />
+            {errors.email}
+          </p>
         )}
       </div>
 
       {/* Phone */}
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium mb-1" style={{ color: "var(--text-primary)" }}>
+      <div className="space-y-2">
+        <label htmlFor="phone" className="block text-sm font-bold uppercase tracking-widest text-silver-dark ms-1">
           {t("phone")} *
         </label>
         <input
@@ -144,36 +163,43 @@ export default function ContactForm() {
           id="phone"
           name="phone"
           required
-          className="w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors"
-          style={{ backgroundColor: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text-primary)" }}
+          className="w-full px-5 py-4 rounded-xl glass-input text-white text-base focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-300 placeholder:text-silver-dark/30 text-start"
+          dir="ltr"
+          placeholder="+966 5X XXX XXXX"
         />
         {errors.phone && (
-          <p className="mt-1 text-xs text-red-500">{errors.phone}</p>
+          <p className="mt-1 text-xs text-red-400 font-medium flex items-center gap-1">
+            <AlertCircle size={12} />
+            {errors.phone}
+          </p>
         )}
       </div>
 
       {/* Message */}
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1" style={{ color: "var(--text-primary)" }}>
+      <div className="space-y-2">
+        <label htmlFor="message" className="block text-sm font-bold uppercase tracking-widest text-silver-dark ms-1">
           {t("message")} *
         </label>
         <textarea
           id="message"
           name="message"
-          rows={4}
+          rows={5}
           required
-          className="w-full px-4 py-2.5 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors resize-none"
-          style={{ backgroundColor: "var(--input-bg)", borderColor: "var(--input-border)", color: "var(--text-primary)" }}
+          className="w-full px-5 py-4 rounded-xl glass-input text-white text-base focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-300 resize-none placeholder:text-silver-dark/30"
+          placeholder={t("messagePlaceholder") || "How can we help you?"}
         />
         {errors.message && (
-          <p className="mt-1 text-xs text-red-500">{errors.message}</p>
+          <p className="mt-1 text-xs text-red-400 font-medium flex items-center gap-1">
+            <AlertCircle size={12} />
+            {errors.message}
+          </p>
         )}
       </div>
 
       {/* Error message */}
       {state === "error" && (
-        <div className="flex items-center gap-2 text-red-500 text-sm">
-          <AlertCircle size={16} />
+        <div className="flex items-center gap-2 text-red-400 text-sm font-medium bg-red-500/10 p-4 rounded-xl border border-red-500/20">
+          <AlertCircle size={18} />
           {t("error")}
         </div>
       )}
@@ -182,16 +208,16 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state === "submitting"}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent-light disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+        className="w-full inline-flex items-center justify-center gap-3 px-8 py-5 text-lg font-bold text-white bg-accent rounded-xl hover:bg-accent-light disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg glow-effect hover:scale-[1.01] active:scale-[0.99]"
       >
         {state === "submitting" ? (
           <>
-            <Loader2 size={18} className="animate-spin" />
+            <Loader2 size={24} className="animate-spin" />
             {t("sending")}
           </>
         ) : (
           <>
-            <Send size={18} />
+            <Send size={22} />
             {t("send")}
           </>
         )}

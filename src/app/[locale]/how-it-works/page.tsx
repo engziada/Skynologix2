@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import PageHeader from "@/components/ui/PageHeader";
 import ProcessSection from "@/components/sections/ProcessSection";
 import FinalCTASection from "@/components/sections/FinalCTASection";
 
@@ -19,11 +20,15 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default function HowItWorksPage() {
+export default async function HowItWorksPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "process" });
+
   return (
-    <div className="pt-16">
-      <ProcessSection />
+    <>
+      <PageHeader title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
+      <ProcessSection hideHeading={true} />
       <FinalCTASection />
-    </div>
+    </>
   );
 }
