@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy: #0a1628;
+  --color-navy-light: #132040;
+  --color-navy-dark: #060f1d;
+  --color-accent: #3b82f6;
+  --color-accent-light: #60a5fa;
+  --color-silver: #e2e8f0;
+  --color-silver-light: #f1f5f9;
+  --color-silver-dark: #94a3b8;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-arabic: var(--font-arabic), "Noto Sans Arabic", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ===== DARK THEME (default) ===== */
+:root,
+.dark {
+  --bg-primary: #060f1d;
+  --bg-secondary: #0a1628;
+  --bg-card: #0f1d32;
+  --bg-card-hover: #132040;
+  --bg-navbar: rgba(6, 15, 29, 0.85);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: rgba(59, 130, 246, 0.15);
+  --border-hover: rgba(59, 130, 246, 0.35);
+  --glow-color: rgba(59, 130, 246, 0.08);
+  --glow-hover: rgba(59, 130, 246, 0.15);
+  --input-bg: #0f1d32;
+  --input-border: rgba(148, 163, 184, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===== LIGHT THEME ===== */
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-navbar: rgba(255, 255, 255, 0.85);
+  --text-primary: #0a1628;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-color: rgba(10, 22, 40, 0.1);
+  --border-hover: rgba(59, 130, 246, 0.3);
+  --glow-color: rgba(59, 130, 246, 0.04);
+  --glow-hover: rgba(59, 130, 246, 0.08);
+  --input-bg: #ffffff;
+  --input-border: rgba(10, 22, 40, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+/* AI Dots Grid Background */
+.dots-grid {
+  background-image: radial-gradient(circle, var(--glow-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow border effect */
+.glow-border {
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 15px var(--glow-color), inset 0 0 15px rgba(59, 130, 246, 0.02);
+  background-color: var(--bg-card);
+  transition: all 0.3s ease;
+}
+
+.glow-border:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 25px var(--glow-hover), inset 0 0 25px rgba(59, 130, 246, 0.04);
+  background-color: var(--bg-card-hover);
+}
+
+/* Section transitions */
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Theme transition for all elements */
+*, *::before, *::after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.15s ease;
 }

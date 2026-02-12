@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "title": "Skynologix | Professional Digital Solutions in Riyadh",
+    "description": "Build your digital presence with a professional website that combines smart design, fast performance, and seamless user experience"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "howItWorks": "How It Works",
+    "contact": "Contact",
+    "portfolio": "Portfolio",
+    "startProject": "Start Your Project",
+    "switchLang": "AR"
+  },
+  "hero": {
+    "title": "Build Your Professional Digital Presence",
+    "subtitle": "Combining smart design, fast performance, and seamless user experience",
+    "cta": "Start Your Project",
+    "whatsapp": "Chat on WhatsApp"
+  },
+  "why": {
+    "sectionTitle": "Why Skynologix?",
+    "sectionSubtitle": "A complete solution under one roof",
+    "items": {
+      "integrated": {
+        "title": "Integrated Solution",
+        "description": "From domain to launch, everything under one roof"
+      },
+      "performance": {
+        "title": "High Performance",
+        "description": "Fast websites optimized for search engines"
+      },
+      "support": {
+        "title": "Continuous Support",
+        "description": "Ongoing technical support after delivery"
+      },
+      "quality": {
+        "title": "Professional Quality",
+        "description": "Design and development at the highest standards"
+      }
+    }
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "sectionSubtitle": "Comprehensive digital solutions for your business growth",
+    "learnMore": "Learn More",
+    "items": {
+      "domain": {
+        "title": "Domain & Hosting",
+        "description": "Complete management of domain and hosting with guaranteed speed and site stability"
+      },
+      "design": {
+        "title": "Website Design & Development",
+        "description": "Attractive and functional interfaces that reflect your brand identity with a user experience focused on converting visitors to clients"
+      },
+      "launch": {
+        "title": "Launch & Post-Delivery Support",
+        "description": "Comprehensive testing before launch with ongoing technical support and guaranteed stable site operation"
+      },
+      "balance": {
+        "title": "Balancing Performance & Aesthetics",
+        "description": "High speed without sacrificing attractive design, delivering real results for clients"
+      }
+    }
+  },
+  "process": {
+    "sectionTitle": "How We Work",
+    "sectionSubtitle": "Clear steps from idea to launch",
+    "steps": {
+      "step1": {
+        "title": "Understanding the Project & Goals",
+        "description": "We start with a deep understanding of your project and goals to set the right foundation"
+      },
+      "step2": {
+        "title": "Proposing the Best Solution",
+        "description": "We present the optimal technical and design solution for your needs"
+      },
+      "step3": {
+        "title": "Design & Development Execution",
+        "description": "We turn ideas into digital reality at the highest quality standards"
+      },
+      "step4": {
+        "title": "Launch & Comprehensive Testing",
+        "description": "We test everything before launch to ensure a perfect experience"
+      },
+      "step5": {
+        "title": "Ongoing Support & Follow-up",
+        "description": "We stay with you after delivery to ensure your project's success"
+      }
+    }
+  },
+  "mission": {
+    "sectionTitle": "Our Mission & Vision",
+    "missionTitle": "Our Mission",
+    "missionText": "We help companies and entrepreneurs launch complete websites from domain to launch",
+    "visionTitle": "Our Vision",
+    "visionText": "To become the first partner for companies and projects in transforming their ideas into an effective digital presence"
+  },
+  "values": {
+    "sectionTitle": "Our Values",
+    "items": {
+      "clarity": { "title": "Clarity", "description": "We communicate with transparency and clarity at every stage" },
+      "commitment": { "title": "Commitment", "description": "We commit to agreed-upon deadlines and quality" },
+      "credibility": { "title": "Credibility", "description": "We build relationships based on trust and credibility" },
+      "comfort": { "title": "Comfort", "description": "We make the experience of working with us easy and comfortable" },
+      "continuousSupport": { "title": "Continuous Support", "description": "We stay by your side even after project completion" }
+    }
+  },
+  "cta": {
+    "title": "Ready to launch a professional website that serves your business growth?",
+    "subtitle": "Contact us today and start your digital journey",
+    "contactBtn": "Contact Us",
+    "whatsappBtn": "WhatsApp"
+  },
+  "contact": {
+    "pageTitle": "Contact Us",
+    "pageSubtitle": "We'd love to hear from you. Send us a message and we'll get back to you as soon as possible",
+    "name": "Name",
+    "company": "Company (optional)",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Your message has been sent successfully! We'll get back to you soon.",
+    "error": "An error occurred. Please try again.",
+    "whatsappTitle": "Or contact us directly via WhatsApp",
+    "whatsappBtn": "Start WhatsApp Chat",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "phoneRequired": "Phone number is required",
+      "messageRequired": "Message is required"
+    }
+  },
+  "about": {
+    "pageTitle": "About Us",
+    "pageSubtitle": "At Skynologix, we don't just design websites — we launch integrated solutions that help companies achieve their digital goals with ease and professionalism",
+    "aboutText": "At Skynologix, we don't just design websites — we launch integrated solutions that help companies achieve their digital goals with ease and professionalism. We believe every project deserves a customized solution that reflects its identity and achieves its goals."
+  },
+  "portfolio": {
+    "pageTitle": "Our Work",
+    "comingSoon": "Coming Soon... We're working on adding our featured projects"
+  },
+  "footer": {
+    "description": "Professional digital solutions from Riyadh, Saudi Arabia",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "rights": "All rights reserved"
+  }
+}
