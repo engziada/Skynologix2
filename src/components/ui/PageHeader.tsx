@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 interface PageHeaderProps {
   title: string;
@@ -41,11 +42,13 @@ export default function PageHeader({
 
       {/* Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <SectionHeading 
-          title={title} 
-          subtitle={subtitle} 
-          centered={true}
-        />
+        <Reveal delay={100}>
+          <SectionHeading 
+            title={title} 
+            subtitle={subtitle} 
+            centered={true}
+          />
+        </Reveal>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import PageHeader from "@/components/ui/PageHeader";
 import ProcessSection from "@/components/sections/ProcessSection";
 import FinalCTASection from "@/components/sections/FinalCTASection";
+import Reveal from "@/components/ui/Reveal";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -27,6 +28,7 @@ export default async function HowItWorksPage({ params }: Props) {
   return (
     <>
       <PageHeader title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
+      
       <ProcessSection hideHeading={true} />
       <FinalCTASection />
     </>

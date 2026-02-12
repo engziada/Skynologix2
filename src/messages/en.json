@@ -8,23 +8,24 @@
     "about": "Vision",
     "services": "Services",
     "howItWorks": "Process",
-    "contact": "Expertise",
+    "contact": "Contact Us",
     "portfolio": "Portfolio",
     "startProject": "Talk to Us",
+    "bookConsultation": "Book a Consultation",
     "switchLang": "AR",
     "riyadh": "RIYADH"
   },
   "hero": {
-    "title": "Outstanding Web Solutions for Saudi SMEs",
-    "subtitle": "Building international digital standards with local expertise for growth in the Kingdom.",
-    "cta": "Start Now",
-    "whatsapp": "WhatsApp",
-    "badge1Title": "Solutions",
-    "badge1Desc": "Network logistics, content management, and development for Saudi companies across the Kingdom",
-    "badge2Title": "Expertise",
-    "badge2Desc": "Diverse Saudi and international experience managing your digital gateway",
-    "badge3Title": "Vision",
-    "badge3Desc": "To become the first partner in transforming ideas into an effective digital presence in the Kingdom"
+    "title": "Professional Web Solutions That Power SME Growth",
+    "subtitle": "We blend international digital standards with Saudi local expertise to drive growth for forward-thinking companies.",
+    "cta": "Start Your Project Now",
+    "whatsapp": "Chat with Us",
+    "badge1Title": "Innovation",
+    "badge1Desc": "Cutting-edge web solutions tailored for the Saudi market ecosystem.",
+    "badge2Title": "Excellence",
+    "badge2Desc": "Delivering premium quality results that exceed international benchmarks.",
+    "badge3Title": "Forward Vision",
+    "badge3Desc": "Strategic digital transformation focused on Vision 2030 growth goals."
   },
   "why": {
     "sectionTitle": "Why Skynologix?",
@@ -133,6 +134,7 @@
   "contact": {
     "pageTitle": "Contact Us",
     "pageSubtitle": "We'd love to hear from you. Send us a message and we'll get back to you as soon as possible",
+    "formTitle": "Send a Message",
     "name": "Name",
     "company": "Company (optional)",
     "email": "Email",
@@ -167,12 +169,19 @@
   },
   "portfolio": {
     "pageTitle": "Our Work",
-    "comingSoon": "Coming Soon... We're working on adding our featured projects"
+    "comingSoon": "Coming Soon...",
+    "comingSoonDesc": "We are currently working on our portfolio to showcase our best projects to you.",
+    "talkToUs": "Talk to Us Today"
   },
   "footer": {
     "description": "Professional digital solutions from Riyadh, Saudi Arabia",
+    "aboutAgency": "We are a digital agency specializing in providing innovative solutions to transform your business into successful digital experiences.",
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
+    "address": "Riyadh, Al Malqa",
+    "followUs": "Follow Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
     "rights": "All rights reserved"
   }
 }

@@ -32,8 +32,15 @@ export default function ServicesPage() {
     <>
       <PageHeader title={t("sectionTitle")} subtitle={t("sectionSubtitle")} />
 
-      <section className="pb-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="pb-24 relative overflow-hidden bg-primary">
+        {/* Catchy background elements */}
+        <div className="absolute inset-0 mesh-pattern opacity-5" />
+        
+        {/* Floating Glows */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/4 animate-float pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] translate-y-1/2 translate-x-1/4 animate-float pointer-events-none" style={{ animationDelay: '-3s' }} />
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {keys.map((key, i) => {
               const Icon = icons[i];
@@ -61,9 +68,7 @@ export default function ServicesPage() {
         </div>
       </section>
       
-      <Reveal>
-        <FinalCTASection />
-      </Reveal>
+      <FinalCTASection />
     </>
   );
 }

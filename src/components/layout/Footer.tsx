@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Link, usePathname } from "@/i18n/navigation";
+import { Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { useTheme } from "@/components/providers/ThemeProvider";
 
 type FooterProps = {
@@ -34,15 +34,13 @@ export default function Footer({ locale }: FooterProps) {
               </div>
             </Link>
             <p className="text-silver-dark text-sm leading-relaxed">
-              {locale === "ar" 
-                ? "نحن وكالة رقمية متخصصة في تقديم حلول مبتكرة لتحويل أعمالك إلى تجارب رقمية ناجحة."
-                : "We are a digital agency specializing in providing innovative solutions to transform your business into successful digital experiences."}
+              {t("aboutAgency")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="lg:ms-12">
-            <h3 className="text-white font-bold mb-6">{locale === "ar" ? "روابط سريعة" : "Quick Links"}</h3>
+            <h3 className="text-white font-bold mb-6">{t("quickLinks")}</h3>
             <ul className="space-y-4 text-sm text-silver-dark">
               <li><Link href="/about" className="hover:text-accent transition-colors">{nav("about")}</Link></li>
               <li><Link href="/services" className="hover:text-accent transition-colors">{nav("services")}</Link></li>
@@ -53,7 +51,7 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* Contact Column */}
           <div>
-            <h3 className="text-white font-bold mb-6">{locale === "ar" ? "تواصل معنا" : "Contact Us"}</h3>
+            <h3 className="text-white font-bold mb-6">{t("contactUs")}</h3>
             <ul className="space-y-4 text-sm text-silver-dark">
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-accent" />
@@ -65,24 +63,24 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li className="flex items-center gap-3">
                 <MapPin size={18} className="text-accent" />
-                <span>{locale === "ar" ? "الرياض، حي الملقا" : "Riyadh, Al Malqa"}</span>
+                <span>{t("address")}</span>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter/Social - Placeholder for now */}
+          {/* Newsletter/Social - Refined Icons */}
           <div>
-            <h3 className="text-white font-bold mb-6">{locale === "ar" ? "تابعنا" : "Follow Us"}</h3>
+            <h3 className="text-white font-bold mb-6">{t("followUs")}</h3>
             <div className="flex gap-4">
-              <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all cursor-pointer">
-                <span className="text-white font-bold">𝕏</span>
-              </div>
-              <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all cursor-pointer">
-                <span className="text-white font-bold">in</span>
-              </div>
-              <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all cursor-pointer">
-                <span className="text-white font-bold">ig</span>
-              </div>
+              <a href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all group shadow-sm">
+                <Twitter size={20} className="text-white group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all group shadow-sm">
+                <Linkedin size={20} className="text-white group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#" className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all group shadow-sm">
+                <Instagram size={20} className="text-white group-hover:scale-110 transition-transform" />
+              </a>
             </div>
           </div>
         </div>
@@ -95,8 +93,8 @@ export default function Footer({ locale }: FooterProps) {
             &copy; {year} {locale === "ar" ? "سكاينولوجكس" : "Skynologix"}. {t("rights")}.
           </p>
           <div className="flex gap-6 text-xs text-silver-dark">
-            <a href="#" className="hover:text-accent transition-colors">{locale === "ar" ? "سياسة الخصوصية" : "Privacy Policy"}</a>
-            <a href="#" className="hover:text-accent transition-colors">{locale === "ar" ? "الشروط والأحكام" : "Terms of Service"}</a>
+            <a href="#" className="hover:text-accent transition-colors">{t("privacyPolicy")}</a>
+            <a href="#" className="hover:text-accent transition-colors">{t("termsOfService")}</a>
           </div>
         </div>
       </div>

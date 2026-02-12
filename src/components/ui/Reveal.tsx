@@ -40,7 +40,11 @@ export default function Reveal({ children, className = "", delay = 0 }: RevealPr
     <div
       ref={ref}
       className={`reveal ${isVisible ? "active" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ 
+        transitionDelay: `${delay}ms`,
+        transform: isVisible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.98)",
+        opacity: isVisible ? 1 : 0
+      }}
     >
       {children}
     </div>

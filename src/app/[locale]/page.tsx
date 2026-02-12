@@ -9,22 +9,10 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      
-      <Reveal>
-        <ServicesPreview />
-      </Reveal>
-      
-      <Reveal delay={200}>
-        <WhySection />
-      </Reveal>
-      
-      <Reveal>
-        <ProcessSection />
-      </Reveal>
-      
-      <Reveal>
-        <FinalCTASection />
-      </Reveal>
+      <ServicesPreview />
+      <WhySection />
+      <ProcessSection />
+      <FinalCTASection />
     </>
   );
 }
