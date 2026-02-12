@@ -110,13 +110,13 @@ Copy `.env.example` to `.env.local` and fill in:
 ---
 
 ## QA Checklist
-- [ ] Mobile responsive (all breakpoints)
-- [ ] RTL layout correct for Arabic
-- [ ] LTR layout correct for English
-- [ ] Language toggle works
-- [ ] All navigation links correct
-- [ ] Contact form submits successfully
-- [ ] WhatsApp buttons open correct wa.me link
+- [x] Mobile responsive (all breakpoints)
+- [x] RTL layout correct for Arabic
+- [x] LTR layout correct for English
+- [x] Language toggle works
+- [x] All navigation links correct
+- [x] Contact form submits successfully
+- [x] WhatsApp buttons open correct wa.me link
 - [ ] Lighthouse Performance ≥ 90
 - [ ] Lighthouse SEO ≥ 90
 - [ ] Lighthouse Accessibility ≥ 90
