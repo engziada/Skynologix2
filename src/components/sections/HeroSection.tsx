@@ -18,16 +18,14 @@ export default function HeroSection() {
           alt=""
           fill
           priority
-          className={`object-cover object-right opacity-40 scale-105 animate-subtle-zoom ${locale === "en" ? "scale-x-[-1]" : ""}`}
+          className="object-cover object-right opacity-40 scale-105 animate-subtle-zoom"
           sizes="100vw"
         />
         {/* Gradient overlay: more sophisticated depth */}
         <div
           className="absolute inset-0"
           style={{
-            background: locale === "en"
-              ? `radial-gradient(circle at 30% 50%, transparent 0%, #060f1d 70%), linear-gradient(to right, transparent, #060f1d 80%)`
-              : `radial-gradient(circle at 70% 50%, transparent 0%, #060f1d 70%), linear-gradient(to left, transparent, #060f1d 80%)`,
+            background: `radial-gradient(circle at 70% 50%, transparent 0%, #060f1d 70%), linear-gradient(to left, transparent, #060f1d 80%)`,
           }}
         />
         {/* Mesh dot pattern */}
@@ -42,19 +40,30 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className={`w-full md:w-3/5 space-y-10 ${locale === "en" ? "me-auto" : "ms-auto"}`}>
           <Reveal className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 backdrop-blur-sm">
-              <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
-              <span className="text-sm font-bold text-accent tracking-wider uppercase">
-                {t("badge1Title")}
-              </span>
+            <div className={`flex ${locale === "en" ? "justify-center" : ""}`}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 backdrop-blur-sm">
+                <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+                <span className="text-sm font-bold text-accent tracking-wider uppercase">
+                  {t("badge1Title")}
+                </span>
+              </div>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] text-white tracking-tight">
+            <h1
+              className={`font-extrabold leading-[1.15] text-white ${
+                locale === "en"
+                  ? "text-4xl md:text-5xl lg:text-6xl tracking-wide uppercase"
+                  : "text-5xl md:text-6xl lg:text-7xl tracking-tight"
+              }`}
+              style={locale === "en" ? { fontFamily: "var(--font-tech)" } : undefined}
+            >
               {t("title")}
             </h1>
           </Reveal>
           
           <Reveal delay={200}>
-            <p className="text-xl md:text-2xl max-w-2xl leading-relaxed text-silver-dark font-medium">
+            <p className={`max-w-2xl leading-relaxed text-silver-dark font-medium ${
+              locale === "en" ? "text-lg md:text-xl" : "text-xl md:text-2xl"
+            }`}>
               {t("subtitle")}
             </p>
           </Reveal>

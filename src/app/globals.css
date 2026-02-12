@@ -11,6 +11,7 @@
   --color-silver-dark: #94a3b8;
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-arabic: var(--font-arabic), "Noto Sans Arabic", system-ui, sans-serif;
+  --font-tech: var(--font-tech), "Space Grotesk", system-ui, sans-serif;
   
   --animate-subtle-zoom: subtle-zoom 30s infinite alternate;
   --animate-float: float 6s ease-in-out infinite;

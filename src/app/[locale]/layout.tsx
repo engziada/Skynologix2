@@ -3,7 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { inter, notoSansArabic } from "@/lib/fonts";
+import { inter, notoSansArabic, spaceGrotesk } from "@/lib/fonts";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ThemeProvider from "@/components/providers/ThemeProvider";
@@ -67,8 +67,8 @@ export default async function LocaleLayout({ children, params }: Props) {
   const dir = locale === "ar" ? "rtl" : "ltr";
   const fontClass =
     locale === "ar"
-      ? `${notoSansArabic.variable} ${inter.variable}`
-      : `${inter.variable} ${notoSansArabic.variable}`;
+      ? `${notoSansArabic.variable} ${inter.variable} ${spaceGrotesk.variable}`
+      : `${inter.variable} ${notoSansArabic.variable} ${spaceGrotesk.variable}`;
 
   return (
     <html lang={locale} dir={dir} className={`dark ${fontClass}`}>
