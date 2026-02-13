@@ -2,11 +2,15 @@
   "name": "skynologix-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare:cpanel": "node scripts/prepare-cpanel.js"
   },
   "dependencies": {
     "@sanity/client": "^7.14.1",
@@ -16,7 +20,8 @@
     "next-intl": "^4.8.2",
     "next-sanity": "^10.1.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
